@@ -1,0 +1,68 @@
+* Add a black background color to the top navigation */
+.topnav {
+  background-color: #8d8d8d; /* Gray background color */
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+  
+  /* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+#nav_link:hover {
+    background-color: #424040;
+    color: rgb(255, 255, 255);
+  }
+  
+  /* Add a color to the active/current link */
+.topnav a.active {
+    background-color: rgb(49, 47, 47);
+    color: rgb(255, 255, 255);
+ }
+/* Right-aligned section inside the top navigation */
+.topnav_right {
+    float: right;
+    padding: 14px 16px;
+}
+
+.background-container {
+    position: absolute;
+    top: 53px; /* Adjust based on the height of your navbar */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 53px); /* Full height minus the navbar height */
+    background-image: url('table-background.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+
+
+
+
+
+
+
+.footer {
+    background-color: #212020; /* Deep gray background color */
+    color: white;
+    padding: 10px;
+    position: absolute;
+    top: 848.5px; /* Adjust based on the height of your navbar, hero image, game links section, and about section */
+    width: 100%;
+    text-align: center;
+    line-height: 1.4;
+    font-size: 1.4em;
+}

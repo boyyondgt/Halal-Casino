@@ -1,0 +1,245 @@
+
+* Add a black background color to the top navigation */
+.topnav {
+  background-color: #8d8d8d; /* Gray background color */
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+  
+  /* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+#nav_link:hover {
+    background-color: #424040;
+    color: rgb(255, 255, 255);
+  }
+  
+  /* Add a color to the active/current link */
+.topnav a.active {
+    background-color: rgb(49, 47, 47);
+    color: rgb(255, 255, 255);
+ }
+/* Right-aligned section inside the top navigation */
+.topnav_right {
+    float: right;
+    padding: 14px 16px;
+}
+
+.hero-image {
+  background-image: url('home-background.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  position: absolute;
+  top: 53px; /* Adjust this value based on the height of your navbar */
+  width: 100%;
+  opacity: 0.8; /* Reduce the opacity of the hero image */
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center; /* Center the text */
+}
+
+.hero-text h1 {
+  font-size: 50px;
+}
+
+.hero-text p {
+  font-size: 20px;
+}
+
+.hero-text .btn {
+  margin-top: 20px;
+}
+
+
+
+.game-links {
+  position: absolute;
+  top: calc(53px + 500px); /* Adjust based on the height of your navbar and hero image */
+  width: 100%; /* Full width */
+  display: flex;
+  justify-content: space-between;
+  background-color: #2f2f2f; /* Deep gray background color */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.game-links a {
+  flex: 1;
+  margin: 0 2.5%; /* Adjust the margin to create space between the images */
+  position: relative;
+  overflow: hidden;
+}
+
+.game-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.game-links a:hover .game-image {
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+
+.hover-text {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3vw;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Ensure the text does not interfere with hover */
+}
+
+.game-links a:hover .hover-text {
+  opacity: 1;
+}
+
+#poker-image {
+  max-width: 550px; /* Set a fixed width */
+  max-height: 309px; /* Set a fixed height */
+}
+.about-section {
+  background-color: #2f2f2f; /* Deep gray background color */
+  color: white;
+  padding-top: 20px; /* Reduce padding */
+  padding-left: 10%;
+  padding-right: 10%;
+  position: absolute;
+  top: calc(53px + 500px + 348px); /* Adjust based on the height of your navbar, hero image, and game links section */
+  width: 100%;
+  text-align: center;
+  line-height: 1.4; /* Reduce line height */
+  font-size: 1.2em; /* Increase font size */
+}
+
+.footer {
+  background-color: #212020; /* Deep gray background color */
+  color: white;
+  padding: 10px;
+  position: absolute;
+  top: calc(53px + 500px + 348px + 163px); /* Adjust based on the height of your navbar, hero image, game links section, and about section */
+  width: 100%;
+  text-align: center;
+  line-height: 1.4;
+  font-size: 1.4em;
+}
+
+/* Responsive styles for Tablets and Mobile */
+@media (max-width: 768px) {
+  .topnav a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .topnav_right {
+    float: none;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .hero-text h1 {
+    font-size: 36px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .hero-text .btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .game-links {
+    flex-direction: column;
+    align-items: center;
+    top: calc(53px + 300px); /* Adjust based on the height of your navbar and hero image */
+  }
+
+  .game-item {
+    flex: 0 0 80%;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+
+  .about-section {
+    padding: 20px 10px;
+    font-size: 1em;
+  }
+
+  .footer {
+    padding: 20px 10px;
+    font-size: 1em;
+  }
+
+  .game-image {
+    width: 100%; /* Make the image take full width of its container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 420px; /* Set a maximum width */
+    max-height: 420px; /* Set a maximum height */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .hero-text .btn {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  
+  .game-links {
+    top: calc(53px + 200px); /* Adjust based on the height of your navbar and hero image */
+  }
+
+  .about-section {
+    padding: 15px 5px;
+    font-size: 0.9em;
+  }
+
+  .footer {
+    padding: 15px 5px;
+    font-size: 0.9em;
+    top: 100vw;
+  }
+  .game-image {
+  width: 423px; /* Set a fixed width */
+  height: 280px; /* Set a fixed height */
+  }
+
+  .game-image {
+    width: 100%; /* Make the image take full width of its container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 420px; /* Set a maximum width */
+    max-height: 420px; /* Set a maximum height */
+  }
+}
