@@ -78,6 +78,7 @@ function drawCards() {
         document.getElementById('busted-message').textContent = '21, you win!';
         document.getElementById('overlay').style.display = 'block';
         document.getElementById('busted-message').style.display = 'block';
+        playerWins()
         setTimeout(resetGame, 5000);
         return;
       }
@@ -89,6 +90,7 @@ function drawCards() {
         document.getElementById('busted-message').textContent = 'Dealer Busted, you win!';
         document.getElementById('overlay').style.display = 'block';
         document.getElementById('busted-message').style.display = 'block';
+        playerWins()
         setTimeout(resetGame, 5000);
         return;
       }
@@ -179,6 +181,7 @@ function hit() {
             document.getElementById('busted-message').textContent = '21, you win!';
             document.getElementById('overlay').style.display = 'block';
             document.getElementById('busted-message').style.display = 'block';
+            playerWins()
             setTimeout(resetGame, 5000);
           } else if (document.getElementById('player-card-5').src !== 'card-outline.png') {
             // Check if player card 5 has been drawn and player has exactly 5 cards
@@ -200,6 +203,7 @@ function hit() {
               document.getElementById('busted-message').textContent = '5 Card Charlie!';
               document.getElementById('overlay').style.display = 'block';
               document.getElementById('busted-message').style.display = 'block';
+              playerWins()
               setTimeout(resetGame, 5000);
             }
           }
@@ -269,6 +273,7 @@ function stand() {
       document.getElementById('busted-message').textContent = 'Dealer Busted, you win!';
       document.getElementById('overlay').style.display = 'block';
       document.getElementById('busted-message').style.display = 'block';
+      playerWins()
     } else if (dealerValue >= playerValue) {
       // Dealer wins
       document.getElementById('busted-message').textContent = 'lower than Dealer, you lose!';
@@ -280,6 +285,7 @@ function stand() {
       document.getElementById('busted-message').textContent = 'Higher than Dealer, you win!';
       document.getElementById('overlay').style.display = 'block';
       document.getElementById('busted-message').style.display = 'block';
+      playerWins()
     }
     setTimeout(resetGame, 5000);
   });
@@ -336,6 +342,22 @@ function checkDailyBonus() {
   }
 }
 
+
+// Function to award double the bet amount to the player
+function awardDoubleBet(betAmount) {
+  const currentBalance = loadBalance();
+  const newBalance = currentBalance + (betAmount * 2);
+  updateBalance(newBalance);
+}
+
+
+// Function to increment the balance by 1
+function incrementBalance() {
+  const currentBalance = loadBalance();
+  const newBalance = currentBalance + 1;
+  updateBalance(newBalance);
+}
+
 // Call updateBalanceElement and checkDailyBonus on page load
 document.addEventListener('DOMContentLoaded', () => {
   updateBalanceElement();
@@ -358,8 +380,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (playButton) {
     playButton.addEventListener('click', () => {
       const betAmount = parseInt(document.getElementById('bet-amount').value);
-      if (betAmount < 0) {
-        alert('You can\'t bet a negative amount, silly!');
+      if (isNaN(betAmount) || betAmount <= 0) {
+        alert('You can only bet a positive number, silly!');
         return;
       }
       let balance = loadBalance();
@@ -394,6 +416,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('stand-button').disabled = true;
   document.getElementById('hit-button').classList.add('disabled');
   document.getElementById('stand-button').classList.add('disabled');
+  // Add event listener for the increment balance button
+  const incrementBalanceButton = document.getElementById('increment-balance-button');
+  if (incrementBalanceButton) {
+    incrementBalanceButton.addEventListener('click', incrementBalance);
+  }
 });
 // Function to save balance to local storage
 function saveBalance(balance) {
@@ -416,4 +443,17 @@ function updateBalance(newBalance) {
   saveBalance(newBalance);
   updateBalanceElement();
 }
+
+function playerWins() {
+  const betAmount = parseInt(document.getElementById('bet-amount').value);
+  awardDoubleBet(betAmount);
+}
+
+
+
+
+
+
+
+
 
