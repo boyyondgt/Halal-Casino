@@ -312,7 +312,40 @@ function resetGame() {
   // Enable play button
   document.getElementById('play-button').disabled = false;
   document.getElementById('play-button').classList.remove('disabled');
+  // Update balance element
+  updateBalanceElement();
 }
+
+// Function to add 1000 to the balance and log the current day
+function addDailyBonus() {
+  const currentBalance = loadBalance();
+  const newBalance = currentBalance + 1000;
+  updateBalance(newBalance);
+
+  const today = new Date().toISOString().split('T')[0]; // Get current date in YYYY-MM-DD format
+  localStorage.setItem('lastBonusDay', today);
+}
+
+// Function to check if a new day has started and add daily bonus if needed
+function checkDailyBonus() {
+  const lastBonusDay = localStorage.getItem('lastBonusDay');
+  const today = new Date().toISOString().split('T')[0]; // Get current date in YYYY-MM-DD format
+
+  if (lastBonusDay !== today) {
+    addDailyBonus();
+  }
+}
+
+// Call updateBalanceElement and checkDailyBonus on page load
+document.addEventListener('DOMContentLoaded', () => {
+  updateBalanceElement();
+  checkDailyBonus();
+});
+
+// Call updateBalanceElement on page load
+document.addEventListener('DOMContentLoaded', () => {
+  updateBalanceElement();
+});
 
 // Add event listeners for the buttons
 document.addEventListener('DOMContentLoaded', () => {
@@ -324,6 +357,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const playButton = document.getElementById('play-button');
   if (playButton) {
     playButton.addEventListener('click', () => {
+      const betAmount = parseInt(document.getElementById('bet-amount').value);
+      if (betAmount < 0) {
+        alert('You can\'t bet a negative amount, silly!');
+        return;
+      }
+      let balance = loadBalance();
+      if (betAmount > balance) {
+        alert('Insufficient balance!');
+        return;
+      }
+      balance -= betAmount;
+      updateBalance(balance);
+
       drawCards();
       // Enable hit and stand buttons
       document.getElementById('hit-button').disabled = false;
@@ -349,5 +395,25 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('hit-button').classList.add('disabled');
   document.getElementById('stand-button').classList.add('disabled');
 });
+// Function to save balance to local storage
+function saveBalance(balance) {
+  localStorage.setItem('balance', balance);
+}
 
+// Function to load balance from local storage
+function loadBalance() {
+  return parseInt(localStorage.getItem('balance')) || 0;
+}
+
+// Function to update the balance element
+function updateBalanceElement() {
+  const balance = loadBalance();
+  document.getElementById('balance').textContent = balance;
+}
+
+// Function to update the balance and save it to local storage
+function updateBalance(newBalance) {
+  saveBalance(newBalance);
+  updateBalanceElement();
+}
 
