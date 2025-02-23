@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const overlay = document.getElementById('overlay');
   const overlayText = document.getElementById('overlay-text');
   const betInput = document.getElementById('bet-amount');
-  const refreshDeckButton = document.getElementById('shuffle-button');
+  const refreshDeckButton = document.getElementById('refresh-deck-button');
 
   let leftCardValue = null;
   let rightCardValue = null;
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
                   }
 
                   if (choice) {
-                      checkResult(choice);
+                      checkResult(choice, position);
                   }
               } else {
                   console.error('Failed to draw card:', data.error);
@@ -74,23 +74,6 @@ document.addEventListener('DOMContentLoaded', function () {
           })
           .catch(error => {
               console.error('Error fetching card:', error);
-          });
-  }
-
-  function refreshDeck() {
-      const refreshDeckApi = `https://deckofcardsapi.com/api/deck/${deckId}/shuffle/`;
-
-      fetch(refreshDeckApi)
-          .then(response => response.json())
-          .then(data => {
-              if (data.success) {
-                  showOverlay('Deck refreshed!');
-              } else {
-                  console.error('Failed to refresh deck:', data.error);
-              }
-          })
-          .catch(error => {
-              console.error('Error refreshing deck:', error);
           });
   }
 
@@ -109,9 +92,19 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   }
 
-  function checkResult(choice) {
-      if ((choice === 'higher' && rightCardValue > leftCardValue) ||
-          (choice === 'lower' && rightCardValue < leftCardValue)) {
+  function checkResult(choice, position) {
+      let previousCardValue, currentCardValue;
+
+      if (position === 'right') {
+          previousCardValue = leftCardValue;
+          currentCardValue = rightCardValue;
+      } else { //used to see switch which card is being compared
+          previousCardValue = rightCardValue;
+          currentCardValue = leftCardValue;
+      }
+
+      if ((choice === 'higher' && currentCardValue > previousCardValue) ||
+          (choice === 'lower' && currentCardValue < previousCardValue)) {
           showOverlay('Correct!');
           awardBet(currentBet);
       } else {
