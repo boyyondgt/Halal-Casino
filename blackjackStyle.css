@@ -72,13 +72,14 @@
 
 .dealer-card-outline, .player-card-outline {
     border: solid black 3px;
-  border-radius: 10px;
-    width: 119px;
+    border-radius: 10px;
+    width: 120px;
     height: 160px;
     z-index: 4;
 }
 
 .card-outline {
+    background-image: url('https://deckofcardsapi.com/static/img/back.png');
     width: 120px;
     height: 160px;
 }

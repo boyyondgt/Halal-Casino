@@ -35,6 +35,100 @@
     padding: 14px 16px;
 }
 
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+nav {
+  height: 60px; /* Adjust based on your nav height */
+}
+
+.game-container {
+  position: absolute;
+  top: 60px; /* Adjust based on your nav height */
+  width: 100%;
+  height: calc(100vh - 60px); /* Adjust based on your nav height */
+  background-image: url('table-background.png');
+  background-size: cover;
+  padding: 20px;
+}
+
+.bet-container {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  display: flex;
+  align-items: center;
+  padding: 5%;
+}
+
+.bet-input {
+  margin-right: 10px;
+  height: 25px;
+}
+
+.play-button {
+  width: 45px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+}
+
+.challenger, .player {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.challenger {
+  top: 2%; /* Adjust to position the challenger comfortably */
+}
+
+.player {
+  bottom: 2%; /* Adjust to position the player comfortably */
+}
+
+.card-outlines {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.card-outline {
+  width: 100px; /* Set width in pixels */
+  height: 130px; /* Set height in pixels */
+  background-image: url('https://deckofcardsapi.com/static/img/back.png');
+  background-size: cover;
+  margin: 0 15px; /* Set margin in pixels */
+}
+
+.middle-cards {
+  position: absolute;
+  top: 50%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  width: auto;
+}
+
+.middle-cards .card-outline {
+  margin: 0 10px; /* Set margin in pixels */
+}
+
+
+
+
+
+
+
 
 
 
@@ -48,7 +142,7 @@
     color: white;
     padding: 10px;
     position: absolute;
-    top: calc(53px + 500px + 348px + 163px); /* Adjust based on the height of your navbar, hero image, game links section, and about section */
+    top: 650px;
     width: 100%;
     text-align: center;
     line-height: 1.4;
