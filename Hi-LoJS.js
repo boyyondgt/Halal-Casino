@@ -14,11 +14,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const overlay = document.getElementById('overlay');
   const overlayText = document.getElementById('overlay-text');
   const betInput = document.getElementById('bet-amount');
+  const refreshDeckButton = document.getElementById('shuffle-button');
 
   let leftCardValue = null;
   let rightCardValue = null;
   let lastChangedCard = 'right'; // Track which card was last changed
   let currentBet = 0;
+  const deckId = '2cudi8amuayf'; // Replace with your actual deck ID
 
   betButton.addEventListener('click', function () {
       const betAmount = parseInt(betInput.value);
@@ -39,8 +41,12 @@ document.addEventListener('DOMContentLoaded', function () {
       fetchCard(lastChangedCard === 'right' ? 'left' : 'right', 'lower');
   });
 
+  refreshDeckButton.addEventListener('click', function () {
+      refreshDeck();
+  });
+
   function fetchCard(position, choice) {
-      const drawCardApi = 'https://deckofcardsapi.com/api/deck/2cudi8amuayf/draw/?count=1';
+      const drawCardApi = `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=1`;
 
       fetch(drawCardApi)
           .then(response => response.json())
@@ -71,6 +77,23 @@ document.addEventListener('DOMContentLoaded', function () {
           });
   }
 
+  function refreshDeck() {
+      const refreshDeckApi = `https://deckofcardsapi.com/api/deck/${deckId}/shuffle/`;
+
+      fetch(refreshDeckApi)
+          .then(response => response.json())
+          .then(data => {
+              if (data.success) {
+                  showOverlay('Deck refreshed!');
+              } else {
+                  console.error('Failed to refresh deck:', data.error);
+              }
+          })
+          .catch(error => {
+              console.error('Error refreshing deck:', error);
+          });
+  }
+
   function getCardValue(value) {
       switch (value) {
           case 'ACE':
@@ -87,8 +110,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function checkResult(choice) {
-      if ((choice === 'higher' && leftCardValue > rightCardValue) ||
-          (choice === 'lower' && leftCardValue < rightCardValue)) {
+      if ((choice === 'higher' && rightCardValue > leftCardValue) ||
+          (choice === 'lower' && rightCardValue < leftCardValue)) {
           showOverlay('Correct!');
           awardBet(currentBet);
       } else {
