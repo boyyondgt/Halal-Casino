@@ -60,12 +60,14 @@ body, html {
   
   .roulette-wheel {
     position: relative;
-    width: 500px; /* Adjust the size as needed */
-    height: 500px; /* Adjust the size as needed */
+    width: 80vw;
+    height: 80vw;
+    max-width: 500px;
+    max-height: 500px;
     border-radius: 50%;
     border: solid olive 3px;
     background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
-  }
+}
   
   .roulette-button {
     width: 60px; /* Set width in pixels */
@@ -101,13 +103,13 @@ body, html {
 
 .bet-input {
   padding: 5px;
-  width: 150px;
+  width: 120px;
   text-align: center;
 }
 
 .bet-button {
   padding: 5px 10px;
-  width: 150px;
+  width: 120px;
   color: white;
   border: none;
   cursor: pointer;
@@ -137,6 +139,13 @@ body, html {
 .black-button:hover {
   background-color: gray;
 }
+.number-button {
+  background-color: olive;
+}
+
+.number-button:hover {
+  background-color: rgba(128, 128, 0, 0.674);
+}
 .bet-info {
   position: absolute;
   max-width: 300px;
@@ -163,31 +172,18 @@ body, html {
   border: 1.7px solid black;
 }
 
-@keyframes roll { /*the transform makes it central. and the rotate makes it spin with the buttons*/
+@keyframes roll {
   0% {
-      transform: translate(-50%, -50%) rotate(0deg);
-  }
-  25% {
-      transform: translate(-50%, -50%) rotate(90deg);
-  }
-  50% {
-      transform: translate(-50%, -50%) rotate(180deg);
-  }
-  75% {
-      transform: translate(-50%, -50%) rotate(270deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   100% {
-      transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
-
-
-
-
-
-
-
+.rolling {
+  animation: roll 1s ease-out forwards;
+}
 
 
 
@@ -198,9 +194,126 @@ body, html {
     color: white;
     padding: 10px;
     position: absolute;
-    top: calc(53px + 500px + 35.5px); /* Adjust based on the height of your navbar, hero image, game links section, and about section */
+    top: 98.9%; /* Adjust based on the height of your navbar, hero image, game links section, and about section */
     width: 100%;
     text-align: center;
     line-height: 1.4;
     font-size: 1.4em;
   }
+
+
+
+  /* Responsive styles */
+@media (max-width: 678px) {
+  .roulette-wheel {
+    width: 500px;
+    height: 500px;
+}
+
+.roulette-button {
+  width: 60px; /* Set width in pixels */
+  height: 30px; /* Set height in pixels */
+  padding: 0 2px; /* Add 2px padding to the sides */
+  background-color: rgb(255, 0, 0); /* Adjust the color as needed */
+  color: rgb(255, 255, 255);
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 30px; /* Center text vertically */
+}
+
+.inner-rectangle {
+    width: 10;
+    width: 50px;
+    height: 30px;
+}
+
+  .roulette-ball {
+      width: 15px;
+      height: 15px;
+  }
+
+  .bet-input {
+      width: 100px;
+      font-size: 14px;
+  }
+
+  .bet-button {
+      width: 100px;
+      font-size: 14px;
+  }
+
+  #balance {
+      font-size: 14px;
+  }
+
+  .bet-info {
+    font-size: 8px;
+    width: 80px;
+    right: 10px;
+    top: 50px;
+}
+  .footer {
+    top: 98.9%; /* Adjust based on the height of your navbar, hero image, game links section, and about section */
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .roulette-wheel {
+    width: 300px;
+    height: 300px;
+}
+
+.roulette-button {
+  width: 25px; /* Set width in pixels */
+  height: 30px; /* Set height in pixels */
+  padding: 0 2px; /* Add 2px padding to the sides */
+  background-color: rgb(255, 0, 0); /* Adjust the color as needed */
+  color: rgb(255, 255, 255);
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 30px; /* Center text vertically */
+}
+
+.inner-rectangle {
+    width: 10;
+    padding-right: 70px;
+    height: 30px;
+}
+
+  .roulette-ball {
+      width: 10px;
+      height: 10px;
+  }
+
+  .bet-input {
+      width: 80px;
+      font-size: 12px;
+  }
+
+  .bet-button {
+      width: 80px;
+      font-size: 12px;
+  }
+
+  #balance {
+      font-size: 12px;
+  }
+
+  .bet-info {
+      font-size: 6px;
+      width: 80px;
+      right: 107px;
+      top: 205px;
+  }
+  .footer {
+    top: 100%; /* Adjust based on the height of your navbar, hero image, game links section, and about section */
+    width: 100%;
+  }
+}
