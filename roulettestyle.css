@@ -80,11 +80,106 @@ body, html {
     text-align: center;
     line-height: 30px; /* Center text vertically */
   }
+  .inner-rectangle {
+    width: 60px; /* Set width in pixels */
+    height: 30px; /* Set height in pixels */
+    background-color: olivedrab; /* Light olive color */
+    border: 2px solid black; /* Optional: Add a border */
+    transform: translate(-50%, -50%);
+}
 
+.center-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
 
+.bet-input {
+  padding: 5px;
+  width: 150px;
+  text-align: center;
+}
 
+.bet-button {
+  padding: 5px 10px;
+  width: 150px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
+.red-button {
+  background-color: red;
+}
 
+.red-button:hover {
+  background-color: darkred;
+}
+
+.green-button {
+  background-color: green;
+}
+
+.green-button:hover {
+  background-color: darkgreen;
+}
+
+.black-button {
+  background-color: black;
+}
+
+.black-button:hover {
+  background-color: gray;
+}
+.bet-info {
+  position: absolute;
+  max-width: 300px;
+  text-align: center;
+  font-weight: 600;
+  color: white;
+  right: 5%;
+}
+
+.paytable-title {
+  font-size: 1.2em;
+  text-align: center;
+}
+.roulette-ball {
+  position: absolute;
+  z-index: 3;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1.7px solid black;
+}
+
+@keyframes roll { /*the transform makes it central. and the rotate makes it spin with the buttons*/
+  0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+  }
+  25% {
+      transform: translate(-50%, -50%) rotate(90deg);
+  }
+  50% {
+      transform: translate(-50%, -50%) rotate(180deg);
+  }
+  75% {
+      transform: translate(-50%, -50%) rotate(270deg);
+  }
+  100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
 
 
 
@@ -103,7 +198,7 @@ body, html {
     color: white;
     padding: 10px;
     position: absolute;
-    top: calc(53px + 500px + 348px + 163px); /* Adjust based on the height of your navbar, hero image, game links section, and about section */
+    top: calc(53px + 500px + 42px); /* Adjust based on the height of your navbar, hero image, game links section, and about section */
     width: 100%;
     text-align: center;
     line-height: 1.4;

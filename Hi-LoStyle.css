@@ -1,3 +1,4 @@
+/* General Styles */
 * Add a black background color to the top navigation */
 .topnav {
   background-color: #8d8d8d; /* Gray background color */
@@ -7,219 +8,270 @@
   top: 0;
   z-index: 1000;
 }
-  
-  /* Style the links inside the navigation bar */
+
+/* Style the links inside the navigation bar */
 .topnav a {
-    float: left;
-    color: #000000;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Change the color of links on hover */
-#nav_link:hover {
-    background-color: #424040;
-    color: rgb(255, 255, 255);
-  }
-  
-  /* Add a color to the active/current link */
-.topnav a.active {
-    background-color: rgb(49, 47, 47);
-    color: rgb(255, 255, 255);
- }
-/* Right-aligned section inside the top navigation */
-.topnav_right {
-    float: right;
-    padding: 14px 16px;
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
+/* Change the color of links on hover */
+#nav_link:hover {
+  background-color: #424040;
+  color: rgb(255, 255, 255);
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: rgb(49, 47, 47);
+  color: rgb(255, 255, 255);
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav_right {
+  float: right;
+  padding: 14px 16px;
+}
 
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 nav {
-    height: 53px; /* Adjust based on your nav height */
+  height: 53px; /* Adjust based on your nav height */
 }
 
 .table-background {
-    position: absolute;
-    top: 53px; /* Adjust based on your nav height */
-    width: 100%;
-    height: calc(100vh - 60px); /* Adjust based on your nav height */
-    background-image: url('table-background.png');
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  top: 53px; /* Adjust based on your nav height */
+  width: 100%;
+  height: calc(100vh - 60px); /* Adjust based on your nav height */
+  background-image: url('table-background.png');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .bet-container {
-    position: absolute;
-    top: 15.5%;
-    left: 7.5%;
-    display: flex;
-    flex-direction: row; /* Change to row to position elements beside each other */
-    align-items: center;
+  position: absolute;
+  top: 15.5%;
+  left: 7.5%;
+  display: flex;
+  flex-direction: row; /* Change to row to position elements beside each other */
+  align-items: center;
 }
 
 .bet-input {
-    margin-right: 10px; /* Add margin to the right to space it from the button */
-    padding: 5px;
-    width: 60%;
+  margin-right: 10px; /* Add margin to the right to space it from the button */
+  padding: 5px;
+  width: 60%;
 }
 
 .bet-button {
-    padding: 5px 10px;
-    background-color: blue;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 5px 10px;
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .bet-button:hover {
-    background-color: darkblue;
+  background-color: darkblue;
 }
 
 .bet-button:active {
-    background-color: navy;
+  background-color: navy;
 }
 
 .shuffle-container {
-    margin-bottom: 5%; /* Adjust to position the shuffle button above the cards */
+  margin-bottom: 5%; /* Adjust to position the shuffle button above the cards */
 }
 
 .shuffle-button {
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-
 .card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px; /* Adjust to raise the cards slightly up */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Adjust to raise the cards slightly up */
 }
 
 .card-outline {
-    width: 125px;
-    height: 190px;
-    border: 2px solid black;
-    margin: 0 10px; /* Adjust spacing between cards */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 125px;
+  height: 190px;
+  border: 2px solid black;
+  margin: 0 10px; /* Adjust spacing between cards */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-outline img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .higher-button, .lower-button {
-    width: 100px;
-    height: 40px;
-    margin: 0 10px;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  width: 100px;
+  height: 40px;
+  margin: 0 10px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .higher-button {
-    background-color: green;
-    border: solid black 1.5px;
+  background-color: green;
+  border: solid black 1.5px;
 }
 
 .higher-button:hover {
-    background-color: darkgreen;
-    border: solid black 1.5px;
+  background-color: darkgreen;
+  border: solid black 1.5px;
 }
 
 .higher-button:active {
-    background-color: #004d00;
-    border: solid black 1.5px;
+  background-color: #004d00;
+  border: solid black 1.5px;
 }
 
 .lower-button {
-    background-color: red;
-    border: solid black 1.5px;
+  background-color: red;
+  border: solid black 1.5px;
 }
 
 .lower-button:hover {
-    background-color: darkred;
-    border: solid black 1.5px;
+  background-color: darkred;
+  border: solid black 1.5px;
 }
 
 .lower-button:active {
-    background-color: #6c0202;
-    border: solid black 1.5px;
+  background-color: #6c0202;
+  border: solid black 1.5px;
 }
 
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
 }
 
 .overlay-text {
-    color: white;
-    font-size: 2em;
-    text-align: center;
+  color: white;
+  font-size: 2em;
+  text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .footer {
-    background-color: #212020; /* Deep gray background color */
-    color: white;
-    padding: 10px;
-    position: absolute;
-    top: 97%; /* Adjust based on the height of your navbar, hero image, game links section, and about section */
+  background-color: #212020; /* Deep gray background color */
+  color: white;
+  padding: 10px;
+  position: absolute;
+  top: 97%; /* Adjust based on the height of your navbar, hero image, game links section, and about section */
+  width: 100%;
+  text-align: center;
+  line-height: 1.4;
+  font-size: 1.4em;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .topnav a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .topnav_right {
+    float: none;
+    text-align: left;
+  }
+
+  .bet-container {
+    flex-direction: column;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+  }
+
+  .bet-input {
     width: 100%;
-    text-align: center;
-    line-height: 1.4;
-    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+
+  .card-outline {
+    width: 100px;
+    height: 150px;
+    margin: 10px 0;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+
+  .higher-button, .lower-button {
+    width: 80%;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .bet-container {
+    top: 8%;
+    left: 5%;
+    width: 90%;
+  }
+
+  .bet-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .card-outline {
+    width: 120px;
+    height: 180px;
+    margin: 10px 0;
+  }
+
+  .higher-button, .lower-button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .overlay-text {
+    font-size: 1.5em;
+  }
 }
