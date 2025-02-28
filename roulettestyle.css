@@ -43,12 +43,12 @@ body, html {
   }
   
   nav {
-    height: 60px; /* Adjust based on your nav height */
+    height: 50px; /* Adjust based on your nav height */
   }
   
   .table-background {
     position: absolute;
-    top: 60px; /* Adjust based on your nav height */
+    top: 53.5px; /* Adjust based on your nav height */
     width: 100%;
     height: calc(100vh - 60px); /* Adjust based on your nav height */
     background-image: url('table-background.png');
@@ -198,7 +198,7 @@ body, html {
     color: white;
     padding: 10px;
     position: absolute;
-    top: calc(53px + 500px + 42px); /* Adjust based on the height of your navbar, hero image, game links section, and about section */
+    top: calc(53px + 500px + 35.5px); /* Adjust based on the height of your navbar, hero image, game links section, and about section */
     width: 100%;
     text-align: center;
     line-height: 1.4;

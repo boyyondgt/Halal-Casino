@@ -146,3 +146,13 @@ function saveBalance(balance) {
         addDailyBonus();
     }
   }
+  // Call updateBalanceElement and checkDailyBonus on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    updateBalanceElement();
+    checkDailyBonus();
+  });
+  
+  // Call updateBalanceElement on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    updateBalanceElement();
+  });
