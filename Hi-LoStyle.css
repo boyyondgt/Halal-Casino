@@ -205,22 +205,12 @@ nav {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .topnav a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-
-  .topnav_right {
-    float: none;
-    text-align: left;
-  }
 
   .bet-container {
     flex-direction: column;
     top: 10%;
     left: 5%;
-    width: 90%;
+    width: 30%;
   }
 
   .bet-input {
@@ -229,7 +219,7 @@ nav {
   }
 
   .card-container {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .card-outline {
@@ -243,7 +233,7 @@ nav {
   }
 
   .higher-button, .lower-button {
-    width: 80%;
+    width: 100%;
     margin: 10px 0;
   }
 }
@@ -252,7 +242,7 @@ nav {
   .bet-container {
     top: 8%;
     left: 5%;
-    width: 90%;
+    width: 30%;
   }
 
   .bet-input {
@@ -261,8 +251,8 @@ nav {
   }
 
   .card-outline {
-    width: 120px;
-    height: 180px;
+    width: 80px;
+    height: 120px;
     margin: 10px 0;
   }
 
