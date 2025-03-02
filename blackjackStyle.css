@@ -32,7 +32,7 @@
 /* Right-aligned section inside the top navigation */
 .topnav_right {
     float: right;
-    padding: 14px 16px;
+    padding: 14px 10px;
 }
 
 .background-container {
@@ -173,3 +173,106 @@
     line-height: 1.4;
     font-size: 1.4em;
 }
+
+
+
+/* Responsive styles for Tablets and Mobile */
+@media (max-width: 768px) {
+  
+    .dealer-container, .player-container {
+      flex-direction: row;
+      justify-content: center;
+    }
+  
+    .shuffle-button {
+        position: absolute;
+        top: 150%;
+        left: 50%;
+    }
+
+    .dealer-card-outline, .player-card-outline {
+      width: 75px;
+      height: 110px;
+    }
+  
+    .card-outline {
+      width: 100px;
+      height: 140px;
+    }
+    .topnav_right {
+      width: 30%;
+    }
+    .bet-container {
+      top: 50%;
+      left:5%;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  
+    .bet-input {
+      width: 150px;
+    }
+  
+    .player-actions {
+      bottom: -290%;
+      left: 85%;
+    }
+  
+    .action-button {
+      padding: 8px 16px;
+      font-size: 0.9em;
+    }
+  
+    .footer {
+      padding: 20px 10px;
+      font-size: 1em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .dealer-container, .player-container {
+      flex-direction: row;
+      justify-content: center;
+    }
+    #nav_link {
+      width: 20%;
+    }
+    .dealer-card-outline, .player-card-outline {
+      width: 55px;
+      height: 80px;
+    }
+  
+    .card-outline {
+      width: 80px;
+      height: 120px;
+    }
+  
+    .bet-container {
+      top: 43%;
+      left: 10%;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .bet-input {
+      width: 120px;
+    }
+  
+    .player-actions {
+      top: 50%;
+      left: 80%;
+    }
+  .dealer-card-value , .player-card-value {
+    width: 6%;
+    text-align: left;
+  }
+    .action-button {
+      padding: 6px 12px;
+      font-size: 0.8em;
+    }
+  
+    .footer {
+      padding: 15px 5px;
+      font-size: 0.9em;
+    }
+  }

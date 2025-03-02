@@ -256,7 +256,7 @@ body, html {
     top: 50px;
 }
   .footer {
-    top: 98.9%; /* Adjust based on the height of your navbar, hero image, game links section, and about section */
+    top: 102%; /* Adjust based on the height of your navbar, hero image, game links section, and about section */
     width: 100%;
   }
 }
@@ -313,7 +313,7 @@ body, html {
       top: 205px;
   }
   .footer {
-    top: 100%; /* Adjust based on the height of your navbar, hero image, game links section, and about section */
+    top: 102%; /* Adjust based on the height of your navbar, hero image, game links section, and about section */
     width: 100%;
   }
 }

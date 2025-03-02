@@ -147,17 +147,6 @@
 
 /* Responsive styles for Tablets and Mobile */
 @media (max-width: 768px) {
-  .topnav a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-
-  .topnav_right {
-    float: none;
-    text-align: center;
-    padding: 10px;
-  }
 
   .hero-text h1 {
     font-size: 36px;
@@ -203,6 +192,9 @@
 }
 
 @media (max-width: 480px) {
+  .hero-image{
+    height: 40%;
+  }
   .hero-text h1 {
     font-size: 28px;
   }
@@ -218,10 +210,11 @@
 
   
   .game-links {
-    top: calc(53px + 200px); /* Adjust based on the height of your navbar and hero image */
+    top: 50%; /* Adjust based on the height of your navbar and hero image */
   }
 
   .about-section {
+    top: 144%;
     padding: 15px 5px;
     font-size: 0.9em;
   }
@@ -229,7 +222,7 @@
   .footer {
     padding: 15px 5px;
     font-size: 0.9em;
-    top: 100vw;
+    top: 180%;
   }
   .game-image {
   width: 423px; /* Set a fixed width */

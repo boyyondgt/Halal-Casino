@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         answers.forEach(answer => {
             const answerButton = document.createElement('button');
-            answerButton.textContent = answer;
+            answerButton.innerHTML = answer; // Use innerHTML to decode HTML entities
             answerButton.classList.add('answer-button');
             answerButton.addEventListener('click', () => {
                 checkAnswer(answer, questionData.correct_answer);
