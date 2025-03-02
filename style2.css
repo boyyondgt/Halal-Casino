@@ -47,6 +47,9 @@
     width: 100%;
 }
 
+#trivia-image{
+    background-color: rgba(105, 142, 31, 0.694);
+}
 .games-container {
     background-color: #2f2f2f; /* Deep gray background color */
     display: flex;

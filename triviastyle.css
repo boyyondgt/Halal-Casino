@@ -1,0 +1,114 @@
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.topnav {
+    background-color: #ffffff; /* Gray background color */
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.topnav a {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #424040;
+    color: rgb(255, 255, 255);
+}
+
+.topnav a.active {
+    background-color: rgb(49, 47, 47);
+    color: rgb(255, 255, 255);
+}
+
+.topnav_right {
+    float: right;
+    padding: 14px 16px;
+}
+
+.background-container {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Adjust based on your nav height */
+    background-image: url('table-background.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trivia-title {
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.trivia-controls {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+.question-container {
+    position: absolute;
+    top: 43%;
+    text-align: center;
+    color: white;
+}
+
+.question-container p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.answer-button {
+    display: block;
+    width: 80%;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 1.2em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.answer-button:hover {
+    background-color: #0056b3;
+}
+
+
+.footer {
+    background-color: #212020; /* Deep gray background color */
+    color: white;
+    padding: 10px;
+    position: absolute;
+    top: 99.9%;
+    width: 100%;
+    text-align: center;
+    line-height: 1.4;
+    font-size: 1.4em;
+}

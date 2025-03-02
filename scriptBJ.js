@@ -448,6 +448,25 @@ function playerWins() {
   const betAmount = parseInt(document.getElementById('bet-amount').value);
   awardDoubleBet(betAmount);
 }
+// Function to add 1000 to the balance and log the current day
+function addDailyBonus() {
+  const currentBalance = loadBalance();
+  const newBalance = currentBalance + 1000;
+  updateBalance(newBalance);
+
+  const today = new Date().toISOString().split('T')[0]; // Get current date in YYYY-MM-DD format
+  localStorage.setItem('lastBonusDay', today);
+}
+
+// Function to check if a new day has started and add daily bonus if needed
+function checkDailyBonus() {
+  const lastBonusDay = localStorage.getItem('lastBonusDay');
+  const today = new Date().toISOString().split('T')[0]; // Get current date in YYYY-MM-DD format
+
+  if (lastBonusDay !== today) {
+      addDailyBonus();
+  }
+}
 
 
 
