@@ -3,9 +3,9 @@
 //https://deckofcardsapi.com/api/deck/is3y2ru9tdp6/shuffle/ (reshuffle an existing deck)
 //https://deckofcardsapi.com/api/deck/<<deck_id>>/pile/<<pile_name>>/add/?cards=AS,2S (adding card to pile)
 // Define the API URL
-const ReshuffleApi ='https://deckofcardsapi.com/api/deck/is3y2ru9tdp6/shuffle/';
-const DrawCardApi = 'https://deckofcardsapi.com/api/deck/is3y2ru9tdp6/draw/?count=4';
-const DrawOneCardApi = 'https://deckofcardsapi.com/api/deck/is3y2ru9tdp6/draw/?count=1';
+const ReshuffleApi ='https://deckofcardsapi.com/api/deck/drucfh6xado0/shuffle/';
+const DrawCardApi = 'https://deckofcardsapi.com/api/deck/drucfh6xado0/draw/?count=4';
+const DrawOneCardApi = 'https://deckofcardsapi.com/api/deck/drucfh6xado0/draw/?count=1';
 // Function to reshuffle the deck and log the data
 function reshuffleDeck() {
   fetch(ReshuffleApi)
