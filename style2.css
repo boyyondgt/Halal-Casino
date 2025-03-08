@@ -118,7 +118,7 @@
     color: white;
     padding: 10px;
     position: absolute;
-    top: 185%; /* Adjust based on the height of your navbar, title, and game links section */
+    top: 190%; /* Adjust based on the height of your navbar, title, and game links section */
     width: 100%;
     text-align: center;
     line-height: 1.4;
