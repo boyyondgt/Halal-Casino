@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let rightCardValue = null;
     let lastChangedCard = 'right'; // Track which card was last changed
     let currentBet = 0;
-    const deckId = '2cudi8amuayf'; // Replace with your actual deck ID
+    const deckId = 'w4q4ub7yzaua'; // Replace with your actual deck ID
 
     betButton.addEventListener('click', function () {
         const betAmount = parseInt(betInput.value);
